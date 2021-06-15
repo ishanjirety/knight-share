@@ -30,7 +30,7 @@ export function PostCard({ postId, imgUrl, content, like_count, comment_count, p
             <img src={imgUrl} alt="" className="post-image" />
             <div className="post-actions">
                 {isLiked ? <span onClick={unLikeHandler}><LikeFilled /></span> : <span onClick={LikeHandler}><Like /></span>}
-                <Comment />
+                {/* <Comment /> */}
             </div>
             <div className="caption">
                 <p className="caption-content"><span className="username">{username}</span>{content}</p>
