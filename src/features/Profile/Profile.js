@@ -4,6 +4,7 @@ import { getToken } from '../../utils'
 import { getProfile, updateProfileImageDB, updateProfile } from './profileSlice'
 import Loader from '../../Svg/Loader.svg'
 import { ImageIcon } from '../../Svg'
+import { setRoute } from '../globalSlice'
 import './Profile.css'
 export function Profile() {
     const { user, imageUrl, status } = useSelector(state => state.profileSlice)
@@ -26,6 +27,7 @@ export function Profile() {
         }
     }
     useEffect(() => {
+        dispatch(setRoute('Profile'))
         return dispatch(getProfile({ token: token, userId: user_id }))
     }, [])
     useEffect(() => {
@@ -35,11 +37,11 @@ export function Profile() {
         return
     }, [status])
     useEffect(() => {
-        if(imageUrl !==""){
-             dispatch(updateProfileImageDB({ token: token, userId: user_id, profileImg: imageUrl }))
-             setProfileImage(imageUrl)
+        if (imageUrl !== "") {
+            dispatch(updateProfileImageDB({ token: token, userId: user_id, profileImg: imageUrl }))
+            setProfileImage(imageUrl)
         }
-        return 
+        return
     }, [imageUrl])
 
     function updateProfilePhoto() {

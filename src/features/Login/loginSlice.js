@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { authenticateUser } from './authenticateUser'
-
+import {setToken} from '../../utils'
 export const loginUser = createAsyncThunk('loginSlice/loginUser', async ({ username, password }) => {
     const data = await authenticateUser(username, password)
     return data.data
@@ -21,7 +21,7 @@ const loginSlice = createSlice({
     extraReducers: {
         [loginUser.fulfilled]: (state, action) => {
             state.status = "fulfilled"
-            state.data = action.payload.Login
+            state.data = action.payload?.Login
         },
         [loginUser.rejected]: (state) => {
             state.status = "rejected"

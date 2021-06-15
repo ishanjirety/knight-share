@@ -7,24 +7,27 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updatePassword, updateUsername, loginUser } from './loginSlice'
 import { setToken } from '../../utils'
 import { useNavigate } from 'react-router-dom'
-
+import { setRoute } from '../globalSlice'
 export function Login() {
     const { status, username, password, data } = useSelector(state => state.login)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     useEffect(() => {
         if (status === "fulfilled") {
-            setToken(data.token, data.id, true)
-            navigate('/')
+            if (data.token && data.id) {
+                console.log(data.token,data.id)
+                setToken(data?.token, data.id,true)
+                navigate('/')
+            }
         }
     }, [status])
-
     function loginHandler() {
         console.log(username, password)
         if (username !== "" && password !== "") {
             dispatch(loginUser({ username, password }))
         }
     }
+    useEffect(() => { dispatch(setRoute("Login")) }, [])
 
 
     return (

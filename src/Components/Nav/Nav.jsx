@@ -1,10 +1,16 @@
 import "./Nav.css";
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Home, Search, Post, Profile, Logout } from '../../Svg'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { removeToken } from "../../utils";
 export function Nav() {
     const { globalState: { route } } = useSelector(state => state)
-    console.log(route)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    function logOut() {
+        removeToken()
+        navigate('/login')
+    }
     return (
         <nav className="nav">
             <NavLink to="/">
@@ -19,9 +25,9 @@ export function Nav() {
             <NavLink to="/profile">
                 <span className={route === "Profile" ? "active" : "in-active"}> <Profile /></span>
             </NavLink>
-            <NavLink to="/">
-            <span className={route === "Logout" ? "active" : "in-active"}><Logout /></span>
-            </NavLink>
+            <a onClick={logOut}>
+                <span className={route === "Logout" ? "active" : "in-active"}><Logout /></span>
+            </a>
         </nav>
     );
 }

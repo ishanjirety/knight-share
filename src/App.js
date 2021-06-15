@@ -5,12 +5,14 @@ import { Home, Search, Login, CreatePost, Profile } from './features'
 import { Routes, Route } from 'react-router-dom'
 import { Protected } from './Protected'
 import { getToken } from './utils'
+import { useSelector } from 'react-redux'
 
 function App() {
   const [splashScreenToggle, setSplashScreenToggle] = useState(true)
   const [splashScreenDisplay, setSplashScreenDisplay] = useState(true)
   const loginStatus = getToken()
-
+  const { route } = useSelector(state => state.globalState)
+  console.log(route)
   // Splash screen display
   useEffect(() => {
     setTimeout(() => {
@@ -20,9 +22,10 @@ function App() {
       }, 500)
     }, 2500)
   }, [])
+
   return (
     <div className="App">
-      {!splashScreenDisplay && loginStatus?.isloggedIn && <Nav />}
+      {!splashScreenDisplay && route !== "Login" && route !== "Signup" && <Nav />}
       {splashScreenDisplay && <SplashScreen toggle={splashScreenToggle} />}
       {!splashScreenDisplay && <Routes>
         <Protected path="/" element={<Home />} />
