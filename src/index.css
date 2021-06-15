@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+:root{
+  --primary-color: #1E1E2A;
+  --primary-gradient:linear-gradient(90deg, rgba(82,99,243,1) 25%, rgba(127,78,233,1) 76%, rgba(172,57,223,1) 100%);
+  --text-color-100:#F9F9FA;
+  --icon-color:#5B5A72;
+  --btn-color:#834CFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-color);
+}

@@ -1,0 +1,51 @@
+.post-card {
+    width: 100%;
+}
+
+.post-image {
+    width: 100%
+}
+
+.user-info {
+    display: flex;
+    border-top: 1px solid rgba(67, 66, 84, 0.5);
+    border-bottom: 1px solid rgba(67, 66, 84, 0.5);
+    align-items: center;
+    color: var(--text-color-100);
+    column-gap: 0.5rem;
+    padding-left: 0.4rem;
+}
+
+.user-profile-card {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.post-actions {
+    display: flex;
+    padding-left: 0.5rem;
+    column-gap: 0.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(67, 66, 84, 0.5);
+}
+
+.post-actions svg {
+    width: 2rem;
+    color: var(--icon-color);
+}
+.caption{
+    border-bottom: 1px solid rgba(67, 66, 84, 0.5);
+}
+.caption-content{
+    text-align: left;
+    padding:0 0.5rem;
+    line-height:1.15rem;
+    color:var(--text-color-100);
+    font-weight: 200;
+}
+.caption .username{
+    font-weight: 500;
+    width:auto;
+    margin-right: 0.5rem;
+}

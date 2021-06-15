@@ -1,0 +1,63 @@
+.splash-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-100);
+    z-index:2;
+    position: fixed;
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.splash-screen h1 {
+    font-size: 1.2rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.splash-screen-heading {
+    font-size: 2.5rem !important;
+    font-family: 'Cookie', cursive;
+}
+
+.loader {
+    width: 3rem;
+}
+
+.banner-loader {
+    display: flex;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:2.5rem ;
+}
+
+.banner-loader p {
+    font-size: 2rem;
+    align-self: flex-end;
+}
+
+.hide {
+    animation: hide 1s linear;
+    animation-fill-mode: forwards;
+    /* display: none; */
+}
+.wave{
+    position: fixed;
+    bottom:0;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

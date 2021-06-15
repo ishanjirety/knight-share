@@ -1,0 +1,11 @@
+.profile-list-card{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    column-gap:0.2rem;
+}
+.profile-list-card .user-info{
+    width:90%;
+    border-top: none;
+    border-bottom: none;
+}

@@ -1,0 +1,44 @@
+.nav{
+    height: 4rem;
+    width:100%;
+    background-color:var(--primary-color);
+    position: fixed;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    box-shadow:var(--icon-color) 0px 2px 5px 0px;;
+}
+.nav svg{
+    width:1.9rem;
+    color:var(--icon-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.post{
+    background-color:green;
+    width:2.4rem;
+    height:2.4em;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: linear-gradient(240deg, rgba(82,99,243,1) 25%, rgba(127,78,233,1) 76%, rgba(172,57,223,1) 100%);
+}
+.post svg{
+    width:100%;
+    color:var(--primary-color);
+}
+.active *{
+    color:var(--text-color-100);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.in-active *{
+    color:var(--secondary-color);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
