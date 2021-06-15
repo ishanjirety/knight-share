@@ -15,7 +15,7 @@ export function Home() {
         dispatch(getPosts({ token: token, userId: user_id }))
     }, [])
     useEffect(() => {
-        console.log(posts, status)
+        console.log(posts)
     }, [posts, status])
 
     return (
@@ -24,8 +24,10 @@ export function Home() {
                 <h1 className="page-heading">KnightShare</h1>
             </div>
             <div className="wrapper">
-                {posts.map(({ img_url, like_count, content, comment_count, User: { profile_image, username } }) => {
-                    return <PostCard imgUrl={img_url} content={content} like_count={like_count} comment_count={comment_count} profileImg={profile_image} username={username} />
+                {posts.map(({ id, img_url, like_count, content, comment_count, User: { profile_image, username }, likes }) => {
+                    if (likes.find(like => like.liked_by === user_id)) {
+                        return <PostCard imgUrl={img_url} content={content} like_count={like_count} comment_count={comment_count} profileImg={profile_image} username={username} postId={id} liked={true} key={id} />
+                    } return <PostCard imgUrl={img_url} content={content} like_count={like_count} comment_count={comment_count} profileImg={profile_image} username={username} postId={id} liked={false} key={id} />
                 })}
             </div>
         </div>

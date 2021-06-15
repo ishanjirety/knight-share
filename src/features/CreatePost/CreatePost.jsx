@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ImageIcon } from '../../Svg'
 import { getToken } from '../../utils'
 import Loader from '../../Svg/Loader.svg'
+import { setRoute } from '../globalSlice'
 export function CreatePost() {
     const [isOverlay, setOverlay] = useState(true)
     const [uploadedImage, setUploadedImage] = useState('')
@@ -19,7 +20,6 @@ export function CreatePost() {
             setOverlay(false)
             setUploadedImage(e.target.files[0])
             setProfileImage(URL.createObjectURL(e.target.files[0]))
-
         }
     }
     useEffect(() => {
@@ -33,6 +33,7 @@ export function CreatePost() {
     useEffect(() => {
         const { user_id } = getToken()
         dispatch(addUserId(user_id))
+        dispatch(setRoute('Post'))
     }, [])
     function addPost() {
         console.log('here')

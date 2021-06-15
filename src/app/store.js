@@ -5,6 +5,8 @@ import globalSlice from '../features/globalSlice';
 import searchSlice from '../features/Search/searchSlice';
 import loginSlice from '../features/Login/loginSlice';
 import PostSlice from '../features/CreatePost/creeatePostSlice'
+import likeSlice from '../features/Posts/postSlice'
+import profileSlice from '../features/Profile/profileSlice'
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +15,8 @@ export const store = configureStore({
     globalState: globalSlice,
     search: searchSlice,
     login: loginSlice,
-    postSlice: PostSlice
+    postSlice: PostSlice,
+    likeSlice: likeSlice,
+    profileSlice: profileSlice
   },
 });

@@ -29,6 +29,11 @@
     padding-bottom: 0.2rem;
     border-bottom: 1px solid rgba(67, 66, 84, 0.5);
 }
+.post-actions span{
+    display:flex;
+    align-items: center;
+    justify-content:center
+}
 
 .post-actions svg {
     width: 2rem;

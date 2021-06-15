@@ -7,3 +7,6 @@ export { loginUser } from './loginUser'
 // Mutations
 export { addPost } from './addPost'
 export { addComment } from './addComment'
+export { addLike } from './addLike'
+export { deleteLike } from './deleteLike'
+export { updateProfile } from './updateProfile'

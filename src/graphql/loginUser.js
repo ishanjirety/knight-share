@@ -7,6 +7,5 @@ export function loginUser(username, password) {
           id
           bio
         }
-      }
-      `
+      }`
 }
