@@ -34,14 +34,14 @@ export function Search() {
 
     }, [searchQuery])
     return (
-        <div className="search">
+        <div className="search p-20">
             <div className="search-wrapper">
                 <div className="search-bar">
                     <SearchLight />
                     <input type="text" className="search-input" placeholder='Try "john alex" ' onChange={(e) => setSearchQuery(e.target.value.toLowerCase())} />
                 </div>
             </div>
-            <div className="profile-listing">
+            <div className="profile-listing p-26">
                 {status === "fulfilled" && profiles.map(({ username, profile_image, id }) => {
                     return <ProfileListCard imgUrl={profile_image} username={username} key={id}/>
                 })}

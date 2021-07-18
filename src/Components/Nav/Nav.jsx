@@ -11,6 +11,9 @@ export function Nav() {
         removeToken()
         navigate('/login')
     }
+    function navigateToCreatePost(){
+        navigate("/create-post")
+    }
     return (
         <nav className="nav">
             <div>
@@ -20,7 +23,7 @@ export function Nav() {
                 <NavLink to="/search">
                     <span className={route === "Search" ? "active" : "in-active"}><Search /></span><span className="tag">Search</span>
                 </NavLink>
-                <span className="post-btn">
+                <span className="post-btn" onClick={navigateToCreatePost}>
                     <NavLink className="post" to="/create-post">
                         <span className={route === "Post" ? "active" : "in-active"}><Post /></span>
                     </NavLink>

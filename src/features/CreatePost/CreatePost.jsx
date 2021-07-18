@@ -45,9 +45,9 @@ export function CreatePost() {
     return (
         <>
             <div className="heading">
-                <h1 className="page-title">New Post</h1>
+                <h1 className="page-title p-23">New Post</h1>
             </div>
-            <div className="create-post">
+            <div className="create-post p-24">
                 <div className="image-container">
                     <input type="file" className="file-upload" ref={uploadImageRef} accept="image/png,image/jpeg,image/jpg" onChange={handleFileUpload} />
                     {isOverlay && <div className="overlay" onClick={() => uploadImageRef.current.click()}><ImageIcon /><p>Add Post</p></div>}

@@ -23,7 +23,7 @@ export function PostCard({ postId, imgUrl, content, like_count, comment_count, p
 
 
     return (
-        <div className="post-card">
+        <div className="post-card p-24">
             <div className="user-info">
                 <img className="user-profile-card" src={profileImg} alt="" />
                 <p className="username">{username}</p>

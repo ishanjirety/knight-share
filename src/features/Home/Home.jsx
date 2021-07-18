@@ -19,8 +19,8 @@ export function Home() {
     }, [posts, status])
 
     return (
-        <div className="home">
-            <div className="heading">
+        <div className="home ">
+            <div className="heading p-18">
                 <h1 className="page-heading">KnightShare</h1>
             </div>
             <div className="wrapper">
