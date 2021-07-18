@@ -8,6 +8,7 @@ import { getToken } from '../../utils'
 import Loader from '../../Svg/Loader.svg'
 
 import './Search.css'
+import './Responsive.css'
 export function Search() {
     const dispatch = useDispatch()
     const { status, profiles } = useSelector((state) => state.search);
@@ -44,7 +45,7 @@ export function Search() {
                 {status === "fulfilled" && profiles.map(({ username, profile_image, id }) => {
                     return <ProfileListCard imgUrl={profile_image} username={username} key={id}/>
                 })}
-                {status === "pending" && <div className="banner-loader"><img src={Loader} className="loader" alt="" /></div>}
+                {status === "pending" && <div className="banner-loader p-56"><img src={Loader} className="loader" alt="" /></div>}
             </div>
         </div>
     )

@@ -64,7 +64,7 @@ export function Profile() {
                 </div>
                 <button className="primary-btn" disabled={isBtnDisabled} onClick={updateProfilePhoto}>Update Profile</button>
             </div>
-            {status === "pending" && <div className="profile-loader"><img src={Loader} className="loader" alt="" /></div>}
+            {status === "pending" && <div className="profile-loader p-56"><img src={Loader} className="loader" alt="" /></div>}
         </>
     )
 }

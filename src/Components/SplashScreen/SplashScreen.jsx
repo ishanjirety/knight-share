@@ -2,6 +2,7 @@ import "./SplashScreen.css";
 import Banner from '../../Svg/Banner.svg'
 import Loader from '../../Svg/Loader.svg'
 import Wave from '../../Svg/Wave.svg'
+import './Responsive.css'
 export function SplashScreen({ toggle }) {
     return (
         <div className={toggle ? "splash-screen" : "splash-screen hide"} >

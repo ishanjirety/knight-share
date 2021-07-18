@@ -7,7 +7,15 @@
     display: flex;
     align-items: center;
     justify-content:space-around;
-    box-shadow:var(--icon-color) 0px 2px 5px 0px;;
+    box-shadow:var(--icon-color) 0px 2px 5px 0px;
+    z-index: 10;
+}
+.nav div{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+
 }
 .nav svg{
     width:1.9rem;
@@ -17,7 +25,6 @@
     -webkit-text-fill-color: transparent;
 }
 .post{
-    background-color:green;
     width:2.4rem;
     height:2.4em;
     border-radius:10px;
@@ -37,8 +44,17 @@
     align-items: center;
 }
 .in-active *{
-    color:var(--secondary-color);
+    color:var(--icon-color);
     display:flex;
     justify-content:center;
     align-items: center;
+}
+.tag{
+    display: none;
+}
+.white{
+    color:#fff !important;
+}
+.disabled{
+    color:var(--icon-color) !important;
 }

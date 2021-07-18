@@ -8,19 +8,21 @@ import { updatePassword, updateUsername, loginUser } from './loginSlice'
 import { setToken } from '../../utils'
 import { useNavigate } from 'react-router-dom'
 import { setRoute } from '../globalSlice'
+import './Responsive.css'
 export function Login() {
-    const { status, username, password, data } = useSelector(state => state.login)
+    const { status, username, password, data, loading } = useSelector(state => state.login)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     useEffect(() => {
         if (status === "fulfilled") {
-            if (data.token && data.id) {
-                console.log(data.token,data.id)
-                setToken(data?.token, data.id,true)
+            if (data?.token && data?.id) {
+                console.log(data.token, data.id)
+                setToken(data?.token, data.id, true)
                 navigate('/')
             }
         }
     }, [status])
+
     function loginHandler() {
         console.log(username, password)
         if (username !== "" && password !== "") {
@@ -41,14 +43,14 @@ export function Login() {
             </div>
             <div className="login-wrapper">
                 <div className="input-fields">
-                    <input className="input" required type="text" onChange={(e) => dispatch(updateUsername(e.target.value))} /><label>Username</label>
+                    <input value={username} className="input" required type="text" onChange={(e) => dispatch(updateUsername(e.target.value))} /><label>Username</label>
                 </div>
                 <div className="input-fields">
-                    <input className="input" required type="password" onChange={(e) => dispatch(updatePassword(e.target.value))} /> <label>Password</label>
+                    <input value={password} className="input" required type="password" onChange={(e) => dispatch(updatePassword(e.target.value))} /> <label>Password</label>
                 </div>
             </div>
-            <button className="primary-btn" onClick={loginHandler}>Login</button>
-            <Link to="/signup" className="navigation-link">Already registered? Signup</Link>
+            {status === "rejected" && <p className="danger">Invalid login credentials</p>}
+            <button className="primary-btn" onClick={loginHandler}>{loading}</button>
         </div>
     )
 }

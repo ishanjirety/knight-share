@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './CreatePost.css'
+import './Responsive.css'
 import { updateImage, updatePost, addCaption, addUserId, resetInitialState } from './creeatePostSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { ImageIcon } from '../../Svg'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Post.css'
+import './Responsive.css'
 import { Comment, Like, LikeFilled } from '../../Svg'
 import { addLike, deleteLike } from './postSlice'
 import { getToken } from '../../utils'

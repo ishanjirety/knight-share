@@ -4,8 +4,10 @@ import { updateLike } from './updateLike'
 import { removeLike } from './removeLike'
 
 export const addLike = createAsyncThunk('home/addLike', async ({ token, userId, postId }) => {
-    const data = await updateLike(token, userId, postId)
-    return data.data.Posts
+        
+        const data = await updateLike(token, userId, postId)
+        return data.data.Posts
+
 })
 export const deleteLike = createAsyncThunk('postLike/deleteLike', async ({ userId, postId, token }) => {
     const data = await removeLike(userId, postId, token)

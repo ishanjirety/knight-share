@@ -7,7 +7,7 @@ export async function authenticateUser(username, password) {
         query: loginUser(username, password),
         variables: {}
     });
-
+    console.log("in function")
     var config = {
         method: 'post',
         url: 'https://amusing-meerkat-56.hasura.app/v1/graphql',
@@ -16,8 +16,11 @@ export async function authenticateUser(username, password) {
         },
         data: data
     };
+    try {
+        const dataRec = await axios(config)
+        return dataRec.data
 
-    const dataRec = await axios(config)
-
-    return dataRec.data
+    } catch (e) {
+        return
+    }
 }

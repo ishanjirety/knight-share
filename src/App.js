@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import './Responsive.css'
 import { Nav, SplashScreen } from './Components'
 import { Home, Search, Login, CreatePost, Profile } from './features'
 import { Routes, Route } from 'react-router-dom'
