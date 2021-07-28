@@ -3,19 +3,18 @@
 ## Social media application for chess enthusiast to interact with their chess community
 
 
-### Test Credentials 
+### Test Credentials [Live](https://knight-share.netlify.app/)
 * Username : john_doe
 * Password : john
 
 
-
 ## Features
 * Login
-* User search 
+* User search with `Debounce`
 * Create post 
 * Like post
 * Update profile
-
+* Mobile Responsive
 
 ## Tech stack 
 ### Frontend 
@@ -29,3 +28,8 @@
 * Hasura + Postgres 
 * Express
 
+### Image Storage
+* Firebase/Firestore
+
+### Authentication
+* JWT
